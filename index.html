@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Processamento Digital de Imagens</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Processamento Digital de Imagens</h1>
+
+
+  <section class="input-section">
+    <h2>Carregar Imagens</h2>
+    <label>Imagem 1:
+      <input type="file" id="img1" accept="image/*" />
+    </label>
+    <label>Imagem 2:
+      <input type="file" id="img2" accept="image/*" />
+    </label>
+    <p class="info">As imagens serão automaticamente redimensionadas para 500px de largura mantendo a proporção.</p>
+  </section>
+
+  <section class="canvas-section">
+    <div><p>Imagem 1 (Original)</p><canvas id="canvasOriginal"></canvas></div>
+    <div><p>Imagem 2 (Original)</p><canvas id="canvasImg2"></canvas></div>
+    <div><p>Imagem 1 (Escala de Cinza)</p><canvas id="canvasGray"></canvas></div>
+    <div><p>Resultado da Operação</p><canvas id="canvasResult"></canvas></div>
+  </section>
+
+  <section class="operation-section">
+    <h2>Operações Aritméticas</h2>
+    <button onclick="sumImages()">Soma de Imagens</button>
+    <button onclick="addConstant()">Soma de Constante (Brilho +)</button>
+    <button onclick="subImages()">Subtração de Imagens</button>
+    <button onclick="subConstant()">Subtração de Constante (Brilho -)</button>
+    <button onclick="multiplyConstant()">Multiplicação (Contraste)</button>
+    <button onclick="divideConstant()">Divisão (Contraste)</button>
+    <button onclick="absDifference()">Diferença Absoluta</button>
+    <button onclick="blendImages()">Blending</button>
+    <button onclick="averageImages()">Média</button>
+  </section>
+
+  <section class="operation-section">
+    <h2>Pré-processamento</h2>
+    <button onclick="toGrayscale()">Converter para Tons de Cinza</button>
+    <button onclick="flipHorizontal()">Espelhar Horizontal</button>
+    <button onclick="flipVertical()">Espelhar Vertical</button>
+    <button onclick="thresholdImage()">Limiarização</button>
+    <button onclick="equalizeHistogram()">Equalização de Histograma</button>
+  </section>
+
+  <section class="operation-section">
+    <h2>Operações Lógicas (Imagens Binárias)</h2>
+    <button onclick="binaryLogicOp('AND')">AND</button>
+    <button onclick="binaryLogicOp('OR')">OR</button>
+    <button onclick="binaryLogicOp('XOR')">XOR</button>
+    <button onclick="binaryLogicOp('NOT')">NOT</button>
+  </section>
+
+  <section class="operation-section">
+    <h2>Filtros - Domínio Espacial (Passa-Baixa)</h2>
+    <button onclick="filterMean()">Média</button>
+    <button onclick="filterMinMax('min')">Mínimo</button>
+    <button onclick="filterMinMax('max')">Máximo</button>
+    <button onclick="filterMedian()">Mediana</button>
+    <button onclick="filterOrder(1)">Filtro de Ordem (2º menor)</button>
+    <button onclick="filterConservativeSmoothing()">Suavização Conservativa</button>
+    <button onclick="filterGaussian()">Gaussiano</button>
+  </section>
+
+  <section class="operation-section">
+    <h2>Detecção de Bordas (Passa-Alta)</h2>
+    <button onclick="detectEdgesPrewitt()">Prewitt</button>
+    <button onclick="detectEdgesSobel()">Sobel</button>
+    <button onclick="detectEdgesLaplacian()">Laplaciano</button>
+  </section>
+
+  <section class="operation-section">
+    <h2>Operações Morfológicas</h2>
+    <button onclick="morphDilate()">Dilatação</button>
+    <button onclick="morphErode()">Erosão</button>
+    <button onclick="morphOpen()">Abertura</button>
+    <button onclick="morphClose()">Fechamento</button>
+    <button onclick="morphContour()">Contorno</button>
+  </section>
+
+  <section class="operation-section">
+    <h2>Utilidades</h2>
+    <button onclick="resetImages()">Restaurar Imagem Original</button>
+    <button onclick="saveResultImage()">Salvar Resultado</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
